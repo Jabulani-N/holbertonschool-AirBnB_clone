@@ -1,7 +1,11 @@
 # holbertonschool-AirBnB_clone
 A repository that clones certain AirBnB functionality
 
+<p align="center">
 
+  <img src="https://stack.com.au/wp-content/uploads/2016/12/howard.jpg" width="400\"/>
+
+<br>
 # Task 0 - README, AUTHORS
 
 create readme
