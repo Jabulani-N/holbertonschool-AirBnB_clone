@@ -37,4 +37,4 @@ public instance attributes:
 
 test that attributes get properly set
 
-- Jabulani: is meant to doing it
+- Jabulani: is committed to doing it
