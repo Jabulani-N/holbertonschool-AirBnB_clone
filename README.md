@@ -32,3 +32,9 @@ public instance attributes:
 * created_at - datetime
 
 * updated_at - datetime
+
+## Tests - Task 3
+
+test that attributes get properly set
+
+- Jabulani: is meant to doing it
