@@ -4,6 +4,7 @@ This module exclusively tests the BaseModel class
 
 
 import unittest
+from unittest.mock import MagicMock
 from models.base_model import BaseModel
 
 class TestBaseModel(unittest.TestCase):
