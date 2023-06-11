@@ -6,7 +6,7 @@ A repository that clones certain AirBnB functionality
   <img src="https://stack.com.au/wp-content/uploads/2016/12/howard.jpg" width="400\"/>
 
 <br>
-  
+
 # Task 0 - README, AUTHORS
 
 create readme
@@ -20,6 +20,10 @@ description and code examples of the command interpreter:
 * how to use
 
 `AUTHORS` file at the root of your repository, listing all individuals having contributed content to the repository
+
+# Task 2 - Unittest
+
+unittests will be graded using `python3 -m unittest discover tests`
 
 # Task 3 - BaseModel
 
