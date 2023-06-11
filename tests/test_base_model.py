@@ -35,10 +35,13 @@ class TestBaseModel(unittest.TestCase):
         """Reset the __nb_objects counter.
         print test"""
         print("Base setUp")
+        p = patch("Channel.all", new=MagicMock(return_value=channel_list))
+        p.start()
 
 
     def tearDown(self):
         print("Base tearDown")
+        p.stop()  # defined in setUp
 
     #first test cluster: public attributes
     # self.assertEqual(thing, what_thing_should_equal_to_pass_test)
