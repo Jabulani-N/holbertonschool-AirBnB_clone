@@ -9,9 +9,10 @@ from models.base_model import BaseModel
 
 # items below are imported for unittest.mock
 import uuid
+import datetime
 from datetime import datetime
 
-datetime.utcnow = MagicMock(retrurn_value="return goes here")
+# datetime.utcnow = MagicMock(retrurn_value="return goes here")
 # Datetime note:
 # datetime.datetime(2012, 1, 1, 10, 10, 10)
 # seems to create and return a class instance
@@ -38,13 +39,12 @@ class TestBaseModel(unittest.TestCase):
         # p = patch("Channel.all", new=MagicMock(return_value=channel_list))
         # p.start()
 
-
     def tearDown(self):
         print("Base tearDown")
         # p.stop()
         # p is defined in setUp
 
-    #first test cluster: public attributes
+    # first test cluster: public attributes
     # self.assertEqual(thing, what_thing_should_equal_to_pass_test)
     def test_instanciation(self):
         newbase1 = BaseModel()
