@@ -27,13 +27,15 @@ unittests will be graded using `python3 -m unittest discover tests`
 
 ## known issues
 
-### unittest can find the test file, but fails to import the test module:
+### SOLVED: unittest can find the test file, but fails to import the test module:
 
 - `ImportError: Failed to import test module: test_models.test_base_model`
 
 potential solutions:
 
 * check names of everything within the file, and be sure it lines up exactly
+
+Solution: I was using unitest wrong, and attempting to mock something while outside any class. I commented taht out, and am reviewing how to properly use "with patch" to mock things.
 
 
 # Task 3 - BaseModel

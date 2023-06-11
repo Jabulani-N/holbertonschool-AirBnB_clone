@@ -12,7 +12,7 @@ import uuid
 import datetime
 from datetime import datetime
 
-# datetime.utcnow = MagicMock(retrurn_value="return goes here")
+datetime.utcnow() = MagicMock(retrurn_value="return goes here")
 # Datetime note:
 # datetime.datetime(2012, 1, 1, 10, 10, 10)
 # seems to create and return a class instance
