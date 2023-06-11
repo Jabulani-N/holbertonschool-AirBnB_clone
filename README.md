@@ -35,7 +35,7 @@ potential solutions:
 
 * check names of everything within the file, and be sure it lines up exactly
 
-Solution: I was using unitest wrong, and attempting to mock something while outside any class. I commented taht out, and am reviewing how to properly use "with patch" to mock things.
+Solution: I was using unitest wrong, and attempting to mock something while outside any class. I commented that out, and am reviewing how to properly use "with patch" to mock things.
 
 
 # Task 3 - BaseModel
