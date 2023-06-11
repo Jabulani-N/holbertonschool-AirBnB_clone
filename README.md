@@ -25,6 +25,10 @@ description and code examples of the command interpreter:
 
 unittests will be graded using `python3 -m unittest discover tests`
 
+resource [from youtube](https://youtu.be/WFRljVPHrkE?t=180):
+
+`with mock.patch('fileWheremethodIsUsed.method', return_value=mocked_return_value)`
+
 ## known issues
 
 ### SOLVED: unittest can find the test file, but fails to import the test module:
