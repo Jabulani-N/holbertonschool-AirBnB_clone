@@ -38,3 +38,21 @@ public instance attributes:
 test that attributes get properly set
 
 - Jabulani: is committed to doing it
+
+according to [this](https://stackoverflow.com/questions/16310989/python-how-to-unmock-reset-mock-during-testing) you can isolate your magicmocks via startup having
+
+```
+
+p = patch("Channel.all", new=MagicMock(return_value=channel_list))
+
+p.start()
+
+```
+
+and teardown having
+
+```
+
+p.stop()
+
+```

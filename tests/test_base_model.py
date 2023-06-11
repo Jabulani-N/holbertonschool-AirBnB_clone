@@ -12,6 +12,14 @@ import uuid
 from datetime import datetime
 
 datetime.utcnow = MagicMock(retrurn_value="return goes here")
+# Datetime note:
+# datetime.datetime(2012, 1, 1, 10, 10, 10)
+# seems to create and return a class instance
+
+# the instance has attributes that can be called
+
+# for testing, we can mock to crete this class,
+# and check an identical one was created.
 
 class TestBaseModel(unittest.TestCase):
     """tests class for class BaseModel.
