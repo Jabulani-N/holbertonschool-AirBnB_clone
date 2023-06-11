@@ -39,7 +39,7 @@ test that attributes get properly set
 
 - Jabulani: is committed to doing it
 
-according to [this](https://stackoverflow.com/questions/16310989/python-how-to-unmock-reset-mock-during-testing) you can isolate your magicmocks via startup having
+according to [this](https://stackoverflow.com/questions/16310989/python-how-to-unmock-reset-mock-during-testing) you can isolate your magicmocks via setUp having
 
 ```
 
@@ -49,7 +49,7 @@ p.start()
 
 ```
 
-and teardown having
+and tearDown having
 
 ```
 
