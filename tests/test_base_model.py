@@ -4,7 +4,7 @@ This module exclusively tests the BaseModel class
 
 
 import unittest
-from unittest.mock import MagicMock
+from unittest.mock import patch, MagicMock
 from models.base_model import BaseModel
 
 # items below are imported for unittest.mock
