@@ -7,6 +7,12 @@ import unittest
 from unittest.mock import MagicMock
 from models.base_model import BaseModel
 
+# items below are imported for unittest.mock
+import uuid
+from datetime import datetime
+
+datetime.utcnow = MagicMock(retrurn_value="return goes here")
+
 class TestBaseModel(unittest.TestCase):
     """tests class for class BaseModel.
     define a test, set up whatever you need between the
@@ -16,6 +22,15 @@ class TestBaseModel(unittest.TestCase):
 
     you'll probably want to mock a known datetime value to put into this
     """
+
+    def setUp(self):
+        """Reset the __nb_objects counter.
+        print test"""
+        print("Base setUp")
+
+
+    def tearDown(self):
+        print("Base tearDown")
 
     #first test cluster: public attributes
     # self.assertEqual(thing, what_thing_should_equal_to_pass_test)

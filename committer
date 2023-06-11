@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# incomplete
+# git add, git commit
+# will prompt for commit message
+
+inputArg=$@
+
+echo -e '\ncomitter: Adding all'
+git add .
+
+# echo -e '\ncommitter: Committing'
+# git commit -m  $inputArg
+
+echo -e '\ngitter: DONE\n'
