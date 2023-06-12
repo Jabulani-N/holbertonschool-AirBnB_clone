@@ -5,7 +5,8 @@ import uuid
 from datetime import datetime
 
 class BaseModel:
-"""this class does stuff please fix comment later:"""
+
+    """this class does stuff please fix comment later:"""
     def __init__(self):
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
@@ -23,10 +24,10 @@ class BaseModel:
         dict_obj['created_at'] = self.created_at.isoformat()
         dict_obj['updated_at'] = self.updated_at.isoformat()
         return dict_obj
-def __init__(self, *args, **kwargs):
-    if kwargs:
-        kwargs['created_at'] = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
-        kwargs['updat_at'] = datetime.strptime(kwargs['update_at'], '%Y-%m-%dT%H:%M:%S.%f')
+    def __init__(self, *args, **kwargs):
+        if kwargs:
+            kwargs['created_at'] = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['updat_at'] = datetime.strptime(kwargs['update_at'], '%Y-%m-%dT%H:%M:%S.%f')
 
         for key, value in kwargs.items():
             if key != '__class__':
