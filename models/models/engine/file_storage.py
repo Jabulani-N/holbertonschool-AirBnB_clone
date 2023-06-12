@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this class gets good"""
+"""this module gets good"""
 
 
 import json
