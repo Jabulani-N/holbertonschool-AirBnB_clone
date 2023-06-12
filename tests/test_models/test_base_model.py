@@ -4,23 +4,27 @@ This module exclusively tests the BaseModel class
 
 
 import unittest
+from unittest import mock
 from unittest.mock import patch, MagicMock
 from models.base_model import BaseModel
 
 # items below are imported for unittest.mock
 import uuid
 import datetime
-from datetime import datetime
 
+# datetime.datetime(year, month, day, hour, minute, second, microsecond)
 
 # Datetime note:
 # datetime.datetime(2012, 1, 1, 10, 10, 10)
-# seems to create and return a class instance
+# creates and returns a class instance
 
 # the instance has attributes that can be called
+# the instance also returns a formatted representation when you use
+# `print(that_instance)`
 
 # for testing, we can mock to crete this class,
 # and check an identical one was created.
+
 
 class TestBaseModel(unittest.TestCase):
     """tests class for class BaseModel.
@@ -47,8 +51,19 @@ class TestBaseModel(unittest.TestCase):
     # first test cluster: public attributes
     # self.assertEqual(thing, what_thing_should_equal_to_pass_test)
     def test_instanciation(self):
+        # ascertain instance created with attributes
+        # and that attributes are correct type
         newbase1 = BaseModel()
-        self.assertEqual(type(newbase1.id), str)
+        self.assertIsInstance(newbase1.id, str)
+        self.assertIsInstance(newbase1.created_at, datetime.datetime)
+
+        # lines below are attemps to verify the datetime returned is correct
+        # they are commented out for now, to be returned to later
+        # with mock.patch('models.base_model.datetime.utcnow()', \
+        # return_value=datetime(2035, 1, 1, 13, 45, 6, 789)):
+        #    # mock datetime to make all uses of datetime.utcnow
+        #    # return a constant date
+        #   pass
 
 
 if __name__ == '__main__':
