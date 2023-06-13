@@ -10,6 +10,7 @@ class BaseModel:
     it holds all shared methods and attributes.
     """
     def __init__(self):
+        """this is the first time you define __init__"""
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = self.created_at
@@ -29,6 +30,21 @@ class BaseModel:
         return dict_obj
 
     def __init__(self, *args, **kwargs):
+        """this is the second time __init__ is defined.
+        The way python works, it'll only take the latest definition,
+        ignoring any earlier definitions.
+
+        due to this, it will never run the code under the first definition.
+        you can fix it by taking all your code from
+        the first time you define __init__
+        and moving it down here,
+        so the one __init__ that Python runs has everything we need in it
+
+        once that is done,
+        please replace this documentation with an actual documentation
+        or I can do that later, if you prefer.
+        Jabulani
+        """
         if kwargs:
             kwargs['created_at'] = datetime.strptime(
                                    kwargs['created_at'],
