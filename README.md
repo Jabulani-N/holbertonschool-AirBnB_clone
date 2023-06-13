@@ -29,7 +29,29 @@ resource [from youtube](https://youtu.be/WFRljVPHrkE?t=180):
 
 `with mock.patch('fileWheremethodIsUsed.method', return_value=mocked_return_value)`
 
+## BaseModel tests (task 3)
 
+* instanciation
+
+* id
+
+* creation times
+
+* string override via print
+
+* dicitonary creation via `to_dict()`
+
+* * dictionary contains id, created_at, updated at
+
+* * dictionary contains `__class__`
+
+## BaseModel tests (task 4)
+
+* test ability to create an instance when feeding it a dictionary
+
+* * we can do this by using the `to_dict()` method already there.
+
+* * * this way, we'll also already know the values each attirbute should be
 
 ## known issues
 
