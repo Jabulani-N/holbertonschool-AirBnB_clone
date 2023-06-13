@@ -34,5 +34,5 @@ class FileStorage:
                 obj_cls = getattr(module, class_name)
                 obj = obj_cls(**json_dict[key])
                 FileStorage.__objects[key] = obj
-        except FileNotFoundError:
-            pass
+            except FileNotFoundError:
+                pass
