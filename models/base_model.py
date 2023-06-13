@@ -3,11 +3,12 @@
 
 import uuid
 from datetime import datetime
-from models.engine import storage
+from models import storage
+
 
 class BaseModel:
     """base class for all models:"""
-     def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """Initialize the BaseModel instance"""
         self.id = str(uuid.uuid4())
         self.created_at = self.updated_at = datetime.now()
@@ -25,8 +26,10 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
+
         """Return the string representation of the BaseModel instance"""
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+
 
     def save(self):
         """Update the 'updated_at' attribute and save the object to the storage (file.json)"""
@@ -40,3 +43,4 @@ class BaseModel:
         dict_copy['created_at'] = self.created_at.isoformat()
         dict_copy['updated_at'] = self.updated_at.isoformat()
         return dict_copy
+
