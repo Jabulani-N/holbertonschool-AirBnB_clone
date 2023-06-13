@@ -29,7 +29,7 @@ class FileStorage:
                 json_dict = json.load(f)
             for key in json_dict:
                 class_name, obj_id = key.split('.')
-            if class_name = "BaseModel"
+            if class_name == "BaseModel":
                 module = __import__('models.base_model', fromlist=
                 [class_name])
                 obj_cls = getattr(module, class_name)
