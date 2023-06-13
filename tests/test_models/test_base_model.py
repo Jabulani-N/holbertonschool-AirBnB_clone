@@ -111,7 +111,6 @@ class TestBaseModel(unittest.TestCase):
         # we are assuming they were used correctly
         # if all characters are used
 
-
     def test_dictionary_created(self):
         """ensures a dictionary is returned
         when using instance.to_dict()
@@ -140,7 +139,6 @@ class TestBaseModel(unittest.TestCase):
         # self.assertEqual(newBase1.id, newBase2.id)
         # self.assertEqual(newBase1.created_at, newBase2.created_at)
         # self.assertEqual(newBase1.updated_at, newBase2.updated_at)
-
 
 
 if __name__ == '__main__':
