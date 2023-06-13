@@ -1,68 +1,68 @@
 #!/usr/bin/env python3
-"""console module"""
+"""
+Entry point for the command interpreter
+"""
 import cmd
-import os
-from models.base_model import BaseModel
 from models import storage
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
-    """HBNBCommand Class"""
+    """Class for the command interpreter"""
 
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
-    def do_create(self, args):
-        """Function to create new BaseModel instance"""
-        if not args:
+    def do_create(self, arg):
+        """Creates a new instance of BaseModel"""
+        if not arg:
             print("** class name missing **")
-        elif args not in ["BaseModel"]:
-            print("** class does not exist **")
-        elif args == "BaseModel":
-            new_instance = BaseModel()
-            new_instance.save()
-            print(new_instance.id)
+            return
+        try:
+            new_obj = eval(arg)()
+            new_obj.save()
+            print(new_obj.id)
+        except (NameError, SyntaxError):
+            print("** class doesn't exist **")
 
-    def do_clear(self, args):
-        """clears the console screen"""
-        os.system("cls" if os.name == "nt" else "clear")
+    def do_show(self, arg):
+        """Prints the string representation of an instance"""
+        args = arg.split()
+        if not arg or len(args) != 2:
+            print("** class name missing **")
+            return
+        try:
+            storage.reload()
+            obj = storage.all()[f"{args[0]}.{args[1]}"]
+            print(obj)
+        except KeyError:
+            print("** no instance found **")
+        except (NameError, SyntaxError):
+            print("** class doesn't exist **")
 
-    def do_all(self, args):
-        """function to print all instances"""
-        classes = ["BaseModel"]
-        all_objs = storage.all()
-        if len(args) > 0:
-            if args not in classes:
-                print("** class doesn't exist **")
-                return
-            else:
-                objs = [str(all_objs[k]) for k in all_objs if args in k]
+    def do_destroy(self, arg):
+        """Deletes an instance of a class"""
+        args = arg.split()
+        if not arg or len(args) != 2:
+            print("** class name missing **")
+            return
+        try:
+            storage.reload()
+            obj = storage.all()[f"{args[0]}.{args[1]}"]
+            del storage.all()[f"{args[0]}.{args[1]}"]
+            storage.save()
+        except KeyError:
+            print("** no instance found **")
+        except (NameError, SyntaxError):
+            print("** class doesn't exist **")
+
+    def do_all(self, arg):
+        """Prints all instances of a class"""
+        args = arg.split()
+        objs = storage.all()
+        if args and args[0] not in ["BaseModel", "User"]:
+            print("** class doesn't exist **")
+            return
+        if not args:
+            print([str(objs[obj]) for obj in objs])
         else:
-            objs = [str(obj) for obj in all_objs.values()]
-            print(objs)
-
-        def do_update(self, args):
-            """updates an instance based on class name and id"""
-            args = args.split()
-            classes = ["BaseModel"]
-            all_objs = storage.all()
-            if len(args) == 0:
-                print("** class name missing **")
-            elif len(args) == 1:
-                if args[0] not in classes:
-                    print("** class doesn't exsist **")
-                else:
-                    print("** instance id missing **")
-                elif len(args) == 2:
-                    key = args[0] + "." = args[1]
-                    if key  not in all_objs:
-                        print("** no instance found **")
-                    else:
-                        print("** attribute name missing **")
-                elif len(args) == 3:
-                    key = args[0] + "." = args[1]
-                    if key not in all_objs:
-                        print("** no instance found **")
-                    elif args[2] in ["id", "created_at", "update_at"]:
-                        print("** can't update attribute **")
-                    else:
-                        print("** value missing **")
+            print([str(objs[obj]) for obj
