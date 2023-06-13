@@ -51,7 +51,7 @@ resource [from youtube](https://youtu.be/WFRljVPHrkE?t=180):
 
 * * we can do this by using the `to_dict()` method already there.
 
-* * * this way, we'll also already know the values each item should be
+* * * this way, we'll also already know the values each attirbute should be
 
 ## known issues
 
