@@ -7,7 +7,7 @@ import unittest
 from unittest import mock
 from unittest.mock import patch, MagicMock
 from models.base_model import BaseModel
-import StringIO
+import io
 import sys
 
 # items below are imported for unittest.mock
@@ -92,7 +92,7 @@ class TestBaseModel(unittest.TestCase):
         using the correct formatting characters
         """
         newBase1 = BaseModel()
-        capturedOutput = StringIO.StringIO()
+        capturedOutput = io.StringIO()
         # created StringIO object
         sys.stdout = capturedOutput
         # redirected stdout to that object
