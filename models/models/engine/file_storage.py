@@ -24,15 +24,15 @@ class FileStorage:
             json.dump(new_dict, f)
 
     def reload(self):
-        try:
-            with open(FileStorage.__file_path, mode='r', encoding='utf-8') as f:
-                json_dict = json.load(f)
-            for key in json_dict:
+         try:
+            with open(FileStorage.__file_path, 'r') as f:
+                obj_dict = json.load(f)
+            for key, value in obj_dict.items():
                 class_name, obj_id = key.split('.')
-                module = __import__('models.' + class_name.lower(), fromlist=
-                [class_name])
-                obj_cls = getattr(module, class_name)
-                obj = obj_cls(**json_dict[key])
+                if class_name == 'User':
+                    obj = User(**value)
+                else:
+                    obj = BaseModel(**value)
                 FileStorage.__objects[key] = obj
-            except FileNotFoundError:
-                pass
+        except (FileNotFoundError, ValueError):
+            pass
