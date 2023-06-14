@@ -71,6 +71,12 @@ class TestFileStorage(unittest.TestCase):
         self.place.max_guest = 6
         self.assertEqual(self.place.max_guest, 6)
 
+    def test_price_by_night(self):
+        """ test price_by_night attribute """
+        self.assertEqual(self.place.max_guest, 0)
+        self.place.price_by_night = 600
+        self.assertEqual(self.place.price_by_night, 600)
+
 
 if __name__ == '__main__':
     unittest.main
