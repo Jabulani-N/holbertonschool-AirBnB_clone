@@ -41,11 +41,13 @@ class TestFileStorage(unittest.TestCase):
 
     def test_first(self):
         """ test first_name attribute """
-        pass
+        self.user.first_name = "testfirst"
+        self.assertEqual(self.user.first_name, "testfirst")
 
     def test_last(self):
         """ test last_name attribute """
-        pass
+        self.user.last_name = "testlast"
+        self.assertEqual(self.user.last_name, "testlast")
 
 if __name__ == '__main__':
     unittest.main
