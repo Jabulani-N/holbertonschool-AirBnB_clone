@@ -36,7 +36,8 @@ class TestFileStorage(unittest.TestCase):
 
     def test_password(self):
         """ test password attribute """
-        pass
+        self.user.password = "testword"
+        self.assertEqual(self.user.password, "testword")
 
     def test_first(self):
         """ test first_name attribute """
