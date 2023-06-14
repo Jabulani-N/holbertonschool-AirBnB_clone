@@ -72,6 +72,18 @@ Setup: creates a BaseModel instance to work with.
 
 TearDown: deletes the instance created in setup.
 
+# User tests
+
+these tests ascertain attributes exist with the correct permissions
+
+# amenity tests
+
+these tests ascertain attributes exist with the correct permissions
+
+# City tests
+
+these tests ascertain attributes exist with the correct permissions
+
 # Task 3 - BaseModel
 
 `BaseModel` will be a class contained in `models/base_model.py`

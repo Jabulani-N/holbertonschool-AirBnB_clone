@@ -49,5 +49,6 @@ class TestFileStorage(unittest.TestCase):
         self.user.last_name = "testlast"
         self.assertEqual(self.user.last_name, "testlast")
 
+
 if __name__ == '__main__':
     unittest.main
