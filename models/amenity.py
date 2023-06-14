@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     """is this some kind of airbnb thing i am too broke to understand?"""
-     name = ""
+    name = ""
 
-     def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
