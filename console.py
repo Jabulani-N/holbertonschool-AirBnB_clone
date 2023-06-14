@@ -79,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             print([str(objs[obj]) for obj in objs])
         else:
-            # print([str(objs[obj]) for obj
+            print([str(objs[obj]) for obj in objs])
             pass
 
 if __name__ == '__main__':
