@@ -7,7 +7,7 @@ import unittest
 from unittest import mock
 from unittest.mock import patch, MagicMock
 from models.base_model import BaseModel
-from models.user import User
+from models.amenity import Amenity
 import os
 import json
 import io
@@ -23,31 +23,16 @@ class TestFileStorage(unittest.TestCase):
 
     def setUp(self):
         """operations that need to happen each test will happen here"""
-        self.user = User()
+        self.amenity = Amenity()
 
     def tearDown(self):
         """operations that need to happen at the end of each test"""
-        del self.user
+        del self.amenity
 
-    def test_email(self):
-        """ test email attribute """
-        self.user.email = "testmail"
-        self.assertEqual(self.user.email, "testmail")
-
-    def test_password(self):
-        """ test password attribute """
-        self.user.password = "testword"
-        self.assertEqual(self.user.password, "testword")
-
-    def test_first(self):
-        """ test first_name attribute """
-        self.user.first_name = "testfirst"
-        self.assertEqual(self.user.first_name, "testfirst")
-
-    def test_last(self):
-        """ test last_name attribute """
-        self.user.last_name = "testlast"
-        self.assertEqual(self.user.last_name, "testlast")
+    def test_name(self):
+        """ test name attribute """
+        self.amenity.name = "testname"
+        self.assertEqual(self.amenity.name, "testname")
 
 
 if __name__ == '__main__':
