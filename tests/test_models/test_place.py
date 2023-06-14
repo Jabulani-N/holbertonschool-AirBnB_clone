@@ -35,17 +35,42 @@ class TestFileStorage(unittest.TestCase):
         self.place.name = "testname"
         self.assertEqual(self.place.name, "testname")
 
-def test_city_id(self):
+    def test_city_id(self):
         """ test city_id attribute """
         self.assertEqual(self.place.city_id, "")
         self.place.city_id = "testcity_id"
         self.assertEqual(self.place.city_id, "testcity_id")
 
-def test_user_id(self):
+    def test_user_id(self):
         """ test user_id attribute """
         self.assertEqual(self.place.user_id, "")
         self.place.user_id = "testuser_id"
         self.assertEqual(self.place.user_id, "testuser_id")
+
+    def test_description(self):
+        """ test description attribute """
+        self.assertEqual(self.place.description, "")
+        self.place.description = "testdescription"
+        self.assertEqual(self.place.description, "testdescription")
+
+    def test_number_rooms(self):
+        """ test number_rooms attribute """
+        self.assertEqual(self.place.number_rooms, 0)
+        self.place.number_rooms = 4
+        self.assertEqual(self.place.number_rooms, 4)
+
+    def test_number_bathrooms(self):
+        """ test number_bathrooms attribute """
+        self.assertEqual(self.place.number_bathrooms, 0)
+        self.place.number_bathrooms = 2
+        self.assertEqual(self.place.number_bathrooms, 2)
+
+    def test_max_guest(self):
+        """ test max_guest attribute """
+        self.assertEqual(self.place.max_guest, 0)
+        self.place.max_guest = 6
+        self.assertEqual(self.place.max_guest, 6)
+
 
 if __name__ == '__main__':
     unittest.main
