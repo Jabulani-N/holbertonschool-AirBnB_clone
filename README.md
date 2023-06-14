@@ -66,6 +66,12 @@ potential solutions:
 Solution: I was using unitest wrong, and attempting to mock something while outside any class. I commented that out, and am reviewing how to properly use "with patch" to mock things.
 
 
+# File Storage tests
+
+Setup: creates a BaseModel instance to work with.
+
+TearDown: deletes the instance created in setup.
+
 # Task 3 - BaseModel
 
 `BaseModel` will be a class contained in `models/base_model.py`
