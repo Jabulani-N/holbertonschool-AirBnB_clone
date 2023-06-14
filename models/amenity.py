@@ -3,6 +3,7 @@
 
 from models.base_model import BaseModel
 
+
 class Amenity(BaseModel):
     """is this some kind of airbnb thing i am too broke to understand?"""
     name = ""

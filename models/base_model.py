@@ -19,20 +19,24 @@ class BaseModel:
             if 'id' in kwargs:
                 self.id = kwargs['id']
             if 'created_at' in kwargs:
-                self.created_at = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+                self.created_at = datetime.strptime(kwargs['created_at'],
+                                                    '%Y-%m-%dT%H:%M:%S.%f')
             if 'updated_at' in kwargs:
-                self.updated_at = datetime.strptime(kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
+                self.updated_at = datetime.strptime(kwargs['updated_at'],
+                                                    '%Y-%m-%dT%H:%M:%S.%f')
         else:
             storage.new(self)
 
     def __str__(self):
 
         """Return the string representation of the BaseModel instance"""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
-
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
-        """Update the 'updated_at' attribute and save the object to the storage (file.json)"""
+        """Update the 'updated_at' attribute
+        and save the object to the storage (file.json)
+        """
         self.updated_at = datetime.now()
         storage.save()
 
