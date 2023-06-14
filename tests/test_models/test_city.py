@@ -35,11 +35,12 @@ class TestFileStorage(unittest.TestCase):
         self.city.name = "testname"
         self.assertEqual(self.city.name, "testname")
 
-def test_state_id(self):
+    def test_state_id(self):
         """ test state_id attribute """
         self.assertEqual(self.city.state_id, "")
         self.city.state_id = "teststate_id"
         self.assertEqual(self.city.state_id, "teststate_id")
+
 
 if __name__ == '__main__':
     unittest.main
