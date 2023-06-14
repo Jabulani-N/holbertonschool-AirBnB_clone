@@ -4,6 +4,7 @@
 
 import json
 
+
 class FileStorage:
     """this class just works:"""
     __file_path = 'file.json'
@@ -25,13 +26,14 @@ class FileStorage:
 
     def reload(self):
         try:
-            with open(FileStorage.__file_path, mode='r', encoding='utf-8') as f:
+            with open(FileStorage.__file_path,
+                      mode='r', encoding='utf-8') as f:
                 json_dict = json.load(f)
             for key in json_dict:
                 class_name, obj_id = key.split('.')
             if class_name == "BaseModel":
                 module = __import__('models.base_model',
-                         fromlist=[class_name])
+                                    fromlist=[class_name])
                 obj_cls = getattr(module, class_name)
                 obj = obj_cls(**json_dict[key])
                 FileStorage.__objects[key] = obj
