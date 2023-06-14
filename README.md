@@ -76,7 +76,7 @@ TearDown: deletes the instance created in setup.
 
 these tests ascertain attributes exist with the correct permissions
 
-# amenity tests
+# amenity tests.
 
 these tests ascertain attributes exist with the correct permissions
 
