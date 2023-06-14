@@ -2,3 +2,4 @@ gitter
 __pycache__
 executrix*
 *.swp
+*.json
