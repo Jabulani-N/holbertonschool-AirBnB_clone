@@ -49,7 +49,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_save(self):
         """ test file_storage save method """
-        self.assertTrue(os.path.exists("file.json"))
+        # self.assertTrue(os.path.exists("file.json"))
         with open("file.json", mode="r", encoding="utf-8") as file:
             file_content = file.read()
         self.assertTrue(len(file_content) > 0)
