@@ -35,11 +35,12 @@ class TestFileStorage(unittest.TestCase):
         self.review.place_id = "testplace_id"
         self.assertEqual(self.review.place_id, "testplace_id")
 
-def test_user_id(self):
+    def test_user_id(self):
         """ test user_id attribute """
         self.assertEqual(self.review.user_id, "")
         self.review.user_id = "testuser_id"
         self.assertEqual(self.review.user_id, "testuser_id")
+
 
 if __name__ == '__main__':
     unittest.main
