@@ -3,6 +3,7 @@
 
 from models.base_model import BaseModel
 
+
 class City(BaseModel):
     """not the class this City needs right now"""
     state_id = ""
