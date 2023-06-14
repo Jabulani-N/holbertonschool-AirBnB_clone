@@ -5,6 +5,7 @@ Entry point for the command interpreter
 import cmd
 from models import storage
 from models.user import User
+from models.state import State
 
 
 class HBNBCommand(cmd.Cmd):
@@ -12,16 +13,29 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def do_EOF(self, line):
+        """quits"""
+        return True
+
+    def do_quit(self, line):
+        """quits"""
+        return True
+
     def do_create(self, arg):
-        """Creates a new instance of BaseModel"""
+        """Creates a new instance of whatever class you tell it
+        be sure to import the class to this module
+        in order to be able to create an instance
+        """
         if not arg:
             print("** class name missing **")
             return
         try:
-            new_obj = eval(arg)()
+            # print(arg)
+            new_obj = eval(arg + "('Test')")
             new_obj.save()
             print(new_obj.id)
-        except (NameError, SyntaxError):
+        except Exception as e:
+            print(e)
             print("** class doesn't exist **")
 
     def do_show(self, arg):
@@ -66,3 +80,7 @@ class HBNBCommand(cmd.Cmd):
             print([str(objs[obj]) for obj in objs])
         else:
            # print([str(objs[obj]) for obj
+           pass
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
