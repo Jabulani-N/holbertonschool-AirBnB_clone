@@ -1,0 +1,1 @@
+this folder will hold any images used in the web-static directory (this direcroty's grandparent)
