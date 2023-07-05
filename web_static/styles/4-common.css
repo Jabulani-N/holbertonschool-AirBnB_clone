@@ -13,3 +13,8 @@ body
     margin: 30px auto;
     position: relative
 }
+
+.button:hover
+{
+    opacity: 0.9;
+}

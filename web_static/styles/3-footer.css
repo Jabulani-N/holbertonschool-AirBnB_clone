@@ -9,10 +9,11 @@ footer
     position: fixed;
     bottom: 0;
     border-top: 1px solid #CCCCCC;
+    vertical-align: middle;
 }
 
 footer p
 {
-    margin: 15;
+    margin: 20;
     text-align: center;
 }
