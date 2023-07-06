@@ -10,3 +10,6 @@ lets you look at html stuff from sandbox. `Ctrl + C`
 it creates a html server with current directory's contents at port 5000
 
 Can be used to test this code from the Docker container/sandbox
+
+
+Control + Shit + R will force reload: clearing cache before reloading.
